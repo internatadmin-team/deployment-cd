@@ -53,10 +53,10 @@ pipeline {
                     // entre deux executions, et aucun secret n'apparait dans le journal de la commande.
                     writeFile file: '.env', text: """POSTGRES_DB=internatadmin
 POSTGRES_USER=internatadmin
-POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-JWT_SECRET=${JWT_SECRET}
+POSTGRES_PASSWORD='${POSTGRES_PASSWORD}'
+JWT_SECRET='${JWT_SECRET}'
 JWT_EXPIRATION_MINUTES=480
-ADMIN_INITIAL_PASSWORD_HASH=${ADMIN_INITIAL_PASSWORD_HASH}
+ADMIN_INITIAL_PASSWORD_HASH='${ADMIN_INITIAL_PASSWORD_HASH}'
 CORS_ALLOWED_ORIGINS=http://localhost:8080
 FRONTEND_PORT=8080
 BACKEND_IMAGE=${BACKEND_IMAGE}
